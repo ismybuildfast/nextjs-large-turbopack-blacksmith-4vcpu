@@ -1,8 +1,8 @@
 name: Build
 
 env:
-  VERCEL_ORG_ID: "team_3GgPqCWWQz8ksUAIdHcIWhl0"
-  VERCEL_PROJECT_ID: "prj_sdkhsvVWnzsYhLcakLb9y04BETUp"
+  VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
